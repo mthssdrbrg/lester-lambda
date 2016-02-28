@@ -24,8 +24,9 @@ def handle(event, _):
         '--site-bucket', config.get('lester', 'site_bucket'),
         '--storage-bucket', config.get('lester', 'storage_bucket'),
         '--distribution-id', config.get('lester', 'distribution_id'),
-        '--kms-id', config.get('lester', 'kms_id'),
         ]
+    if config.has_option('lester', 'kms_id'):
+        command.extend(['--kms-id', config.get('lester', 'kms_id')])
     env = dict(os.environ.copy(), LC_ALL='en_US.UTF-8')
     subprocess.check_call(command, stderr=subprocess.STDOUT, env=env)
     return event
