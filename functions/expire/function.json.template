@@ -1,0 +1,8 @@
+{
+  "timeout": 30,
+  "role": "<role-arn>",
+  "hooks": {
+    "build": "cp ../../config.ini config.ini",
+    "clean": "rm -f config.ini"
+  }
+}

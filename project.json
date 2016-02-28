@@ -1,0 +1,6 @@
+{
+  "name": "lester",
+  "description": "Renew certificates using AWS Lambda",
+  "memory": 128,
+  "nameTemplate": "{{.Project.Name}}-{{.Function.Name}}"
+}

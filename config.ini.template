@@ -1,0 +1,10 @@
+[lester]
+domain: <domain>
+kms_id: <kms-id>
+site_bucket: <s3-bucket>
+storage_bucket: <s3-bucket>
+distribution_id: <id>
+
+[expire]
+buffer_days: 14
+topic: <sns-topic-arn>
