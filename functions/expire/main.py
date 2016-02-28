@@ -51,6 +51,4 @@ def handle(event, _):
         notify(topic, {domain: remaining})
     elif remaining < datetime.timedelta(days=buffer_days):
         notify(topic, {domain: remaining})
-    else:
-        print('Certificate expires in %s' % remaining)
     return event
