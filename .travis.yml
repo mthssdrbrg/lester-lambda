@@ -1,0 +1,6 @@
+language: python
+python:
+  - 2.7
+script:
+  - flake8 functions/*/main.py
+  - python -m py_compile functions/*/main.py

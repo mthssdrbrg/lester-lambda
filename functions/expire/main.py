@@ -9,11 +9,13 @@ import ConfigParser
 import json
 import boto3
 
+
 def read_config():
     """ Read configuration file. """
     config = ConfigParser.SafeConfigParser()
     config.read('config.ini')
     return config
+
 
 def expires_at(hostname):
     """ Fetch expire date for SSL certificate. """
@@ -28,11 +30,13 @@ def expires_at(hostname):
     ssl_info = conn.getpeercert()
     return datetime.datetime.strptime(ssl_info['notAfter'], ssl_date_fmt)
 
+
 def notify(topic, message):
     """ Publish message to SNS topic. """
     sns = boto3.client('sns')
     sns.publish(TopicArn=topic, Message=json.dumps(message))
     return
+
 
 def handle(event, _):
     """ Check if certificate for LESTER_DOMAIN is expiring soon. """

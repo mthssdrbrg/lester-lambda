@@ -3,7 +3,8 @@
 import subprocess
 import os
 import ConfigParser
-from distutils.dir_util import copy_tree
+import distutils
+
 
 def read_config():
     """ Read configuration file. """
@@ -11,9 +12,10 @@ def read_config():
     config.read('config.ini')
     return config
 
+
 def handle(event, _):
     """ Renew certificate using configuration from LESTER_* variables. """
-    copy_tree('lester', '/tmp')
+    distutils.dir_util.copy_tree('lester', '/tmp')
     config = read_config()
     command = [
         '/tmp/lester',
