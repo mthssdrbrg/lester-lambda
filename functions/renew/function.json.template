@@ -2,7 +2,7 @@
   "timeout": 60,
   "role": "<role-arn>",
   "hooks": {
-    "build": "cp ../../config.ini config.ini && mkdir -p lester && curl -sL https://github.com/mthssdrbrg/lester/releases/download/v1.0.0.pre4/lester-v1.0.0.pre4-linux-x86_64.tgz | tar xz -C lester",
+    "build": "cp ../../config.ini config.ini && mkdir -p lester && curl -sL https://git.io/v2V4Y | tar xz -C lester",
     "clean": "rm -rf lester config.ini"
   }
 }
