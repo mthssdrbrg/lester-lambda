@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """ AWS Lambda function for renewing a Let's Encrypt SSL certificate. """
+from distutils import dir_util
 import subprocess
 import os
 import ConfigParser
-import distutils
 
 
 def read_config():
@@ -15,7 +15,7 @@ def read_config():
 
 def handle(event, _):
     """ Renew certificate using configuration from LESTER_* variables. """
-    distutils.dir_util.copy_tree('lester', '/tmp')
+    dir_util.copy_tree('lester', '/tmp')
     config = read_config()
     command = [
         '/tmp/lester',
